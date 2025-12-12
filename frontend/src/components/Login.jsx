@@ -8,6 +8,7 @@ import { Loader2 } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthUser } from '@/redux/authSlice';
 
+import {backendURL} from '../assets/api-url.js'
 const Login = () => {
     const [input, setInput] = useState({
         email: "",
@@ -26,7 +27,7 @@ const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const res = await axios.post('http://localhost:3000/api/v1/user/login', input, {
+            const res = await axios.post(`${backendURL}/api/v1/user/login`, input, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

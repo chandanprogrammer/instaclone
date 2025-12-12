@@ -1,0 +1,1 @@
+export default backendURL = "https://backend-instaclone.vercel.app"
