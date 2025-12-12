@@ -7,8 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthUser } from '@/redux/authSlice';
+import backendURL from '@/assets/api-url';
 
-import {backendURL} from '../assets/api-url.js'
 const Login = () => {
     const [input, setInput] = useState({
         email: "",

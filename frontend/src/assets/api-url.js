@@ -1,1 +1,2 @@
-export default backendURL = "https://backend-instaclone.vercel.app"
+let backendURL = "https://backend-instaclone.vercel.app"
+export default backendURL;
