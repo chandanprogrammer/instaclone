@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { Link, useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { useSelector } from 'react-redux';
+import backendURL from '@/assets/api-url';
 
 const Signup = () => {
     const [input, setInput] = useState({
@@ -25,7 +26,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const res = await axios.post('http://localhost:3000/api/v1/user/register', input, {
+            const res = await axios.post(`${backendURL}/api/v1/user/register`, input, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

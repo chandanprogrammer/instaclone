@@ -13,6 +13,7 @@ import { setSocket } from './redux/socketSlice'
 import { setOnlineUsers } from './redux/chatSlice'
 import { setLikeNotification } from './redux/rtnSlice'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import backendURL from './assets/api-url'
 
 
 const browserRouter = createBrowserRouter([
@@ -55,7 +56,7 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      const socketio = io('http://localhost:3000', {
+      const socketio = io(`${backendURL}`, {
         query: {
           userId: user?._id
         },

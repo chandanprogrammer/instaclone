@@ -1,3 +1,4 @@
+import backendURL from "@/assets/api-url";
 import { setMessages } from "@/redux/chatSlice";
 import { setPosts } from "@/redux/postSlice";
 import axios from "axios";
@@ -10,7 +11,7 @@ const useGetAllMessage = () => {
     useEffect(() => {
         const fetchAllMessage = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/api/v1/message/all/${selectedUser?._id}`, { withCredentials: true });
+                const res = await axios.get(`${backendURL}/api/v1/message/all/${selectedUser?._id}`, { withCredentials: true });
                 if (res.data.success) {  
                     dispatch(setMessages(res.data.messages));
                 }
